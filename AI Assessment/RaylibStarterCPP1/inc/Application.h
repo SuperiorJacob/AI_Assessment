@@ -1,6 +1,7 @@
 #pragma once
 
 #include <raymath.h>
+#include "Player.h"
 
 // Forward Declare
 class GameObject;
@@ -41,11 +42,7 @@ private:
 	Texture2D obstacle;
 	Texture2D hole;
 
-	struct Object
-	{
-		Vector2 pos;
-		int type;
-	};
+	Player* player = new Player();
 
-	std::list<Object> objects;
+	std::list<GameObject*> objects;
 };

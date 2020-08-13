@@ -1,6 +1,8 @@
 #pragma once
 
 #include "GameObject.h"
+#include "Graph2D.h"
+#include "Graph2DEditor.h"
 
 class KeyboardBehaviour;
 class SeekBehaviour;
@@ -15,10 +17,20 @@ public:
 	virtual void Update(float deltaTime);
 	virtual void Draw();
 
+	Graph2D::Node* standingNode = nullptr;
+
+	Graph2D::Node* NodeBelow(Graph2DEditor* graph);
+
+	SeekBehaviour* GetSeekBehaviour() { return m_seekBehaviour; };
+
+	void SeekPath(std::list<Graph2D::Node*> path, Graph2DEditor* graph);
+
 protected:
 
 	KeyboardBehaviour* m_kbBehaviour;
 	SeekBehaviour *m_seekBehaviour;
+
+	Graph2DEditor* m_graph = nullptr;
 
 private:
 };

@@ -1,5 +1,7 @@
 #pragma once
 #include <raymath.h>
+#include <list>
+#include "Graph2D.h"
 
 class Graph2D;
 
@@ -22,6 +24,9 @@ public:
 	void SetNodeOutlineColour(Color colour);
 	void SetNodeLineColour(Color colour);
 
+	std::list<Graph2D::Node*> GetPath() { return m_pathFound; };
+	void SetPath(std::list<Graph2D::Node*> path) { m_pathFound = path; };
+
 	int GetNodeRadius();
 	Color GetNodeColour();
 	Color GetNodeOutlineColour();
@@ -30,6 +35,7 @@ public:
 	bool tooClose = false;
 
 	void DeleteGraph();
+	void PathFromNode(Graph2D::Node* node);
 
 protected:
 
@@ -40,6 +46,8 @@ protected:
 	Color m_nodeOutlineColour = DARKPURPLE;
 	Color m_nodeLineColour = DARKPURPLE;
 	Color m_nodeFoundColour = WHITE;
+
+	std::list<Graph2D::Node*> m_pathFound;
 
 private:
 };

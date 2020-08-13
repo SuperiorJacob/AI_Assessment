@@ -13,7 +13,7 @@ void GameObject::Update(float deltaTime)
 {
 	if (m_behaviour != nullptr) m_behaviour->Update(this, deltaTime);
 
-	ApplyForce(Vector2Scale(Vector2Negate(m_velocity), m_friction));
+	ApplyForce(Vector2Scale(Vector2Negate(Vector2Scale(m_velocity, m_moveSpeed)), m_friction));
 
 	m_velocity = Vector2Add(m_velocity, Vector2Scale(m_acceleration, deltaTime));
 	m_position = Vector2Add(m_position, Vector2Scale(m_velocity, deltaTime));
@@ -24,11 +24,14 @@ void GameObject::Draw()
 {
 	if (m_behaviour != nullptr) m_behaviour->Draw(this);
 
-	Vector2 heading = Vector2Add(m_position, m_velocity);
+	Vector2 pos = GetPosition();
 
-	DrawCircle(m_position.x, m_position.y, 8, GRAY);
+	DrawTexture(GetTexture(), pos.x, pos.y, Color(WHITE));
+	//Vector2 heading = Vector2Add(m_position, m_velocity);
 
-	DrawLine(m_position.x, m_position.y, heading.x, heading.y, BLACK);
+	//DrawCircle(m_position.x, m_position.y, 8, GRAY);
+
+	//DrawLine(m_position.x, m_position.y, heading.x, heading.y, BLACK);
 }
 
 void GameObject::ApplyForce(const Vector2& force)

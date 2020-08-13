@@ -2,6 +2,7 @@
 
 #include "Graph.h"
 #include "raymath.h"
+#include <list>
 
 class Graph2D : public Graph<Vector2, float>
 {
@@ -26,9 +27,7 @@ public:
 
 	bool Process(PFNode* node, Node* find);
 
-	Graph2D::PFNode* Contains(std::vector<Graph2D::PFNode*> list, Graph2D::Node* findNode);
-
-	PFNode* PathFind(Node* start, Node* find);
+	std::list<Graph2D::Node*> PathFind(Node* start, Node* find);
 
 private:
 protected:

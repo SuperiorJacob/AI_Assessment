@@ -4,10 +4,13 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "KeyboardBehaviour.h"
+#include "SeekBehaviour.h"
 
 #include "Graph.h"
 #include "Graph2D.h"
 #include "Graph2DEditor.h"
+
+#include <iostream>
 
 Application::Application(int windowWidth, int windowHeight, const char* windowTitle) :
 	m_windowWidth(windowWidth),
@@ -19,7 +22,10 @@ Application::Application(int windowWidth, int windowHeight, const char* windowTi
 
 Application::~Application()
 {
-
+	for (auto obj : objects)
+	{
+		delete obj;
+	}
 }
 
 void Application::Run()
@@ -59,12 +65,12 @@ void Application::Map()
 	{
 		for (float i = 0; i < m_windowWidth / 32; i++)
 		{
-			objects.push_back(Object({ Vector2({ i * 32, (side == 2) ? (float)(m_windowHeight - 32) : 0 }), 3 }));
+			objects.push_back(new GameObject({ Vector2({ i * 32, (side == 2) ? (float)(m_windowHeight - 32) : 0 }), obstacle }));
 		}
 
 		for (float i = 0; i < (m_windowHeight / 32) - 2; i++)
 		{
-			objects.push_back(Object({ Vector2({ (side == 2) ? (float)(m_windowWidth - 32) : 0, (i * 32) + 32 }), 3 }));
+			objects.push_back(new GameObject({ Vector2({ (side == 2) ? (float)(m_windowWidth - 32) : 0, (i * 32) + 32 }), obstacle }));
 		}
 	}
 
@@ -76,8 +82,8 @@ void Application::Map()
 		{
 			int x = (rand() % 100);
 
-			if (x == 1) objects.push_back(Object({ Vector2({ (column * 32), (row * 32) }), 2 }));
-			else if (x >= 85) objects.push_back(Object({ Vector2({ (column * 32), (row * 32) }), 3 }));
+			if (x == 1) objects.push_back(new GameObject({ Vector2({ (column * 32), (row * 32) }), hole }));
+			else if (x >= 85) objects.push_back(new GameObject({ Vector2({ (column * 32), (row * 32) }), obstacle }));
 			else
 			{
 				if ((column < (m_windowWidth / 32) - 1) && (row < (m_windowHeight / 32) - 1))
@@ -89,7 +95,11 @@ void Application::Map()
 		}
 	}
 
-	objects.push_back(Object({ playerPos, 1 })); // Player
+	// PLAYER
+	player->SetPosition(playerPos);
+	player->SetTexture(ghost);
+
+	objects.push_back(player); // Player
 	//
 
 	for (auto node : m_graph->GetNodes())
@@ -103,23 +113,33 @@ void Application::Map()
 				continue;
 
 			float dist = Vector2Distance(node->data, connectedNode->data);
-			m_graph->AddEdge(node, connectedNode, dist);
-			m_graph->AddEdge(connectedNode, node, dist);
+			bool addEdge = true;
+
+			//Vector2 check = Vector2Add(node->data, { -32, 32 });
+			//if (check.x == connectedNode->data.x && check.y == connectedNode->data.y)
+			//	for (auto obj : objects)
+			//	{
+			//		if (obj != player)
+			//		{
+			//			float objDist = Vector2Distance(obj->GetPosition(), node->data);
+			//			float obj1Dist = Vector2Distance(obj->GetPosition(), connectedNode->data);
+
+			//			if (objDist < 64 && obj1Dist < 64)
+			//				addEdge = false;
+			//		}
+			//	}
+
+			if (addEdge) m_graph->AddEdge(node, connectedNode, dist);
+			//m_graph->AddEdge(connectedNode, node, dist);
 		}
 	}
 
 	m_graphEditor->SetGraph(m_graph);
+	player->standingNode = player->NodeBelow(m_graphEditor);
+	player->SetBehaviour(nullptr);
 
 	// Path Finding Test
-	Graph2D::PFNode* updateFollow = m_graphEditor->GetGraph()->PathFind(m_graphEditor->GetGraph()->GetNodes().front(), m_graphEditor->GetGraph()->GetNodes().back());
-
-	while (updateFollow != nullptr)
-	{
-		updateFollow->node->onto = updateFollow->parent != nullptr ? updateFollow->parent->node : updateFollow->node;
-		updateFollow = updateFollow->parent;
-	}
-
-	delete updateFollow;
+	//m_graphEditor->SetPath(m_graphEditor->GetGraph()->PathFind(player->standingNode, m_graphEditor->GetGraph()->GetNodes().back()));
 	//
 }
 
@@ -149,11 +169,33 @@ void Application::Update(float deltaTime)
 
 	if (IsMouseButtonPressed(1))
 	{
+		for (GameObject * obj : objects)
+		{
+			obj = nullptr;
+			delete obj;
+		}
+
 		objects.clear();
 
 		m_graphEditor->DeleteGraph();
 
 		Map();
+	}
+	else
+	{
+		if (IsMouseButtonPressed(0))
+		{
+			player->standingNode = player->NodeBelow(m_graphEditor);
+
+			m_graphEditor->PathFromNode(player->standingNode);
+
+			player->SeekPath(m_graphEditor->GetPath(), m_graphEditor);
+		}
+
+		for (auto obj : objects)
+		{
+			obj->Update(deltaTime);
+		}
 	}
 }
 
@@ -166,9 +208,9 @@ void Application::Draw()
 
 	m_graphEditor->Draw();
 
-	for (Object obj : objects)
+	for (auto obj : objects)
 	{
-		DrawTexture((obj.type == 2) ? hole : ((obj.type == 1) ? ghost : obstacle), obj.pos.x, obj.pos.y, Color(WHITE));
+		obj->Draw();
 	}
 
 	EndDrawing();

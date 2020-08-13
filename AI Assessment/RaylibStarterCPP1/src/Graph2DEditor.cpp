@@ -8,51 +8,11 @@ Graph2DEditor::Graph2DEditor()
 
 Graph2DEditor::~Graph2DEditor()
 {
-
+	DeleteGraph();
 }
 
 void Graph2DEditor::Update(float deltaTime)
 {
-	auto mousePos = GetMousePosition();
-
-	std::vector<Graph2D::Node*> nearbyNodes;
-	m_graph->GetNearbyNodes(mousePos, GetNodeRadius(), nearbyNodes);
-
-	Graph2D::Node* click = nullptr;
-
-	for (auto nearbyNode : nearbyNodes)
-	{
-		float dist = Vector2Distance(mousePos, nearbyNode->data);
-		int radius = GetNodeRadius();
-
-		tooClose = (dist <= radius);
-
-		if (tooClose)
-			click = nearbyNode;
-
-			break;
-	}
-
-	if (IsMouseButtonPressed(0))
-	{
-		if (tooClose)
-		{
-			for (auto node : GetGraph()->GetNodes())
-			{
-				node->onto = nullptr;
-			}
-
-			Graph2D::PFNode* updateFollow = GetGraph()->PathFind(GetGraph()->GetNodes().front(), click);
-
-			while (updateFollow != nullptr)
-			{
-				updateFollow->node->onto = updateFollow->parent != nullptr ? updateFollow->parent->node : updateFollow->node;
-				updateFollow = updateFollow->parent;
-			}
-
-			delete updateFollow;
-		}
-	}
 }
 
 void Graph2DEditor::Draw()
@@ -162,4 +122,35 @@ void Graph2DEditor::DeleteGraph()
 {
 	m_graph->DeleteNodes();
 	m_graph = nullptr;
+}
+
+void Graph2DEditor::PathFromNode(Graph2D::Node* node)
+{
+	auto mousePos = GetMousePosition();
+
+	std::vector<Graph2D::Node*> nearbyNodes;
+	m_graph->GetNearbyNodes(mousePos, GetNodeRadius(), nearbyNodes);
+
+	Graph2D::Node* click = nullptr;
+
+	for (auto nearbyNode : nearbyNodes)
+	{
+		float dist = Vector2Distance(mousePos, nearbyNode->data);
+		int radius = GetNodeRadius();
+
+		tooClose = (dist <= radius);
+
+		if (tooClose && (click != nullptr ? (Vector2Distance(mousePos, click->data) > dist) : true))
+			click = nearbyNode;
+	}
+
+	if (tooClose)
+	{
+		for (auto node : GetGraph()->GetNodes())
+		{
+			node->onto = nullptr;
+		}
+
+		SetPath(GetGraph()->PathFind(node, click));
+	}
 }
