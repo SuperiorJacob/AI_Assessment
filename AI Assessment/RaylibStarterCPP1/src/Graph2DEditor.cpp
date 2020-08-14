@@ -124,10 +124,10 @@ void Graph2DEditor::DeleteGraph()
 	m_graph = nullptr;
 }
 
-void Graph2DEditor::PathFromNode(Graph2D::Node* node)
+void Graph2DEditor::PathFromNode(Graph2D::Node* node, Camera2D camera)
 {
-	auto mousePos = GetMousePosition();
-
+	auto mousePos = GetScreenToWorld2D(GetMousePosition(), camera);
+	
 	std::vector<Graph2D::Node*> nearbyNodes;
 	m_graph->GetNearbyNodes(mousePos, GetNodeRadius(), nearbyNodes);
 

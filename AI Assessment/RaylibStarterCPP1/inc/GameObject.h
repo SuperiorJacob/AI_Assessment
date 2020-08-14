@@ -39,9 +39,14 @@ public:
 	//
 
 	Texture2D GetTexture() { return m_texture; };
-	void SetTexture(Texture2D texture) { m_texture = texture; };
+	void SetTexture(Texture2D texture, int w, int h) { m_texture = texture; width = w; height = h; };
 
 	void SetBehaviour(Behaviour* behaviour);
+
+	int width = 32;
+	int height = 32;
+
+	bool debug = false;
 
 protected:
 

@@ -35,13 +35,13 @@ public:
 	bool tooClose = false;
 
 	void DeleteGraph();
-	void PathFromNode(Graph2D::Node* node);
+	void PathFromNode(Graph2D::Node* node, Camera2D camera);
 
 protected:
 
 	Graph2D* m_graph = nullptr;
 
-	int m_nodeRadius = 60;
+	int m_nodeRadius = 50;
 	Color m_nodeColour = PURPLE;
 	Color m_nodeOutlineColour = DARKPURPLE;
 	Color m_nodeLineColour = DARKPURPLE;

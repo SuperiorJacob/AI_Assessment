@@ -169,22 +169,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\FleeBehaviour.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\Graph2D.cpp" />
     <ClCompile Include="src\Graph2DEditor.cpp" />
     <ClCompile Include="src\KeyboardBehaviour.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\NPC.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\SeekBehaviour.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Application.h" />
     <ClInclude Include="inc\Behaviour.h" />
+    <ClInclude Include="inc\FleeBehaviour.h" />
     <ClInclude Include="inc\GameObject.h" />
     <ClInclude Include="inc\Graph.h" />
     <ClInclude Include="inc\Graph2D.h" />
     <ClInclude Include="inc\Graph2DEditor.h" />
     <ClInclude Include="inc\KeyboardBehaviour.h" />
+    <ClInclude Include="inc\NPC.h" />
     <ClInclude Include="inc\Player.h" />
     <ClInclude Include="inc\SeekBehaviour.h" />
   </ItemGroup>

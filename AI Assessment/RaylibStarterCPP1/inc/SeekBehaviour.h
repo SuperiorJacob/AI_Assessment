@@ -23,6 +23,8 @@ public:
 
 	void OnArrive(std::function<void()> callback);
 
+	float seekSpeed = 1.0f;
+
 protected:
 
 	Vector2 m_target = { 0,0 };

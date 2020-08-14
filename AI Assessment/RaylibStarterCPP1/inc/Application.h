@@ -2,6 +2,7 @@
 
 #include <raymath.h>
 #include "Player.h"
+#include "NPC.h"
 
 // Forward Declare
 class GameObject;
@@ -9,6 +10,7 @@ class Graph2D;
 class Graph2DEditor;
 
 #include <list>
+#include <map>
 
 class Application 
 {
@@ -27,6 +29,8 @@ public:
 
 	void Map();
 
+	bool CanEdgeNearObject(Graph2D::Node* node, Graph2D::Node* toNode);
+
 protected:
 private:
 
@@ -41,8 +45,14 @@ private:
 	Texture2D ghost;
 	Texture2D obstacle;
 	Texture2D hole;
+	Texture2D human;
 
 	Player* player = new Player();
 
 	std::list<GameObject*> objects;
+	std::list<NPC*> npcs;
+
+	std::map<int, std::map<int, GameObject*>> objectPositions;
+
+	Camera2D camera;
 };

@@ -26,7 +26,8 @@ void GameObject::Draw()
 
 	Vector2 pos = GetPosition();
 
-	DrawTexture(GetTexture(), pos.x, pos.y, Color(WHITE));
+	DrawTexture(GetTexture(), pos.x - width/2, pos.y - height/2, debug ? RED : WHITE);
+
 	//Vector2 heading = Vector2Add(m_position, m_velocity);
 
 	//DrawCircle(m_position.x, m_position.y, 8, GRAY);

@@ -13,7 +13,7 @@ Player::Player()
 		SetBehaviour(m_kbBehaviour);
 	});
 
-	m_moveSpeed = 2.0f;
+	m_moveSpeed = 150.0f;
 
 	//SetBehaviour(m_kbBehaviour);
 }
@@ -29,7 +29,7 @@ Player::~Player()
 void Player::Update(float deltaTime)
 {
 	if (GetBehaviour() != nullptr)
-		GameObject::Update(deltaTime * m_moveSpeed);
+		GameObject::Update(deltaTime);
 }
 
 void Player::Draw()
@@ -69,6 +69,13 @@ void Player::SeekPath(std::list<Graph2D::Node*> fpath, Graph2DEditor* graph)
 	standingNode = NodeBelow(graph);
 	m_seekBehaviour->SetTarget(path.back()->data);
 	SetBehaviour(m_seekBehaviour);
+	
+	// Speed
+	Vector2 normal = Vector2Normalize(Vector2Subtract(path.back()->data, GetPosition()));
+	SetVelocity(Vector2Scale(normal, m_moveSpeed));
+	//
+
+	m_seekBehaviour->seekSpeed = 0.0f;
 
 	m_seekBehaviour->OnArrive([this]() {
 		if (!path.empty())
@@ -78,7 +85,12 @@ void Player::SeekPath(std::list<Graph2D::Node*> fpath, Graph2DEditor* graph)
 			if (!path.empty() && path.back() != nullptr)
 			{
 				standingNode = path.back();
-				m_seekBehaviour->SetTarget(Vector2Add(path.back()->data, { -32 / 2, -32 / 2 }));
+				m_seekBehaviour->SetTarget(path.back()->data);
+
+				// Speed
+				Vector2 normal = Vector2Normalize(Vector2Subtract(path.back()->data, GetPosition()));
+				SetVelocity(Vector2Scale(normal, m_moveSpeed));
+				//
 			}
 		}
 		else
@@ -90,7 +102,5 @@ void Player::SeekPath(std::list<Graph2D::Node*> fpath, Graph2DEditor* graph)
 
 			SetBehaviour(nullptr);
 		};
-
-		SetVelocity({ 0,0 }); // Stops the player from flying super fast.
 	});
 }

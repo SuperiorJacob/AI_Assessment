@@ -23,7 +23,7 @@ void SeekBehaviour::Update(GameObject* obj, float deltaTime)
 	float headingLen = Vector2Length(heading);
 
 	Vector2 dirToTarget = Vector2Normalize(Vector2Subtract(m_target, obj->GetPosition()));
-	Vector2 vecToTarget = Vector2Scale(dirToTarget, headingLen);
+	Vector2 vecToTarget = Vector2Scale(dirToTarget, headingLen * seekSpeed);
 
 	Vector2 targetForcePos = Vector2Add(vecToTarget, obj->GetPosition());
 	Vector2 forceDir = Vector2Subtract(targetForcePos, heading);

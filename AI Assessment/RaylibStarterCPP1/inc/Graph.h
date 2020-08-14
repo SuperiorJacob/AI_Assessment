@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <algorithm>
 
 template<class TNodeData, class TEdgeData>
 class Graph
@@ -78,6 +79,11 @@ public:
 		for (auto p : m_nodes) { delete p; }
 
 		m_nodes.clear();
+	}
+
+	void DeleteNode(Node* node)
+	{
+		m_nodes.erase(std::remove(m_nodes.begin(), m_nodes.end(), node), m_nodes.end());
 	}
 protected:
 
