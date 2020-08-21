@@ -178,6 +178,7 @@
     <ClCompile Include="src\NPC.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\SeekBehaviour.cpp" />
+    <ClCompile Include="src\WanderBehaviour.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Application.h" />
@@ -191,6 +192,7 @@
     <ClInclude Include="inc\NPC.h" />
     <ClInclude Include="inc\Player.h" />
     <ClInclude Include="inc\SeekBehaviour.h" />
+    <ClInclude Include="inc\WanderBehaviour.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

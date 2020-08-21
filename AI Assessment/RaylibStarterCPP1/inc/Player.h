@@ -25,12 +25,17 @@ public:
 
 	void SeekPath(std::list<Graph2D::Node*> path, Graph2DEditor* graph);
 
+	Texture2D boo;
+	int booWait = 0;
+
 protected:
 
 	KeyboardBehaviour* m_kbBehaviour;
 	SeekBehaviour *m_seekBehaviour;
 
 	Graph2DEditor* m_graph = nullptr;
+
+	Vector2 booPos;
 
 private:
 };

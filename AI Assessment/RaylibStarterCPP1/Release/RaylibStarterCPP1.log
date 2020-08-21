@@ -1,174 +1,28 @@
 ﻿  Application.cpp
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(96,24): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(96,50): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(96,83): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(97,24): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(97,31): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(119,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(167,46): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(167,59): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(168,47): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(168,60): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-  GameObject.cpp
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\GameObject.cpp(29,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\GameObject.cpp(29,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Graph2D.cpp
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2D.cpp(85,17): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2D.cpp(86,21): warning C4834: discarding return value of function with 'nodiscard' attribute
-  Graph2DEditor.cpp
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(25,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(25,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(25,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(25,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(43,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(43,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(44,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(44,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(53,84): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(53,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(53,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(53,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(61,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(61,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(62,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(62,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Graph2DEditor.cpp(132,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  KeyboardBehaviour.cpp
-  main.cpp
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(749,63): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(749,63): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(750,75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(816,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(817,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(874,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(874,29): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(876,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(876,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(907,53): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(908,53): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(909,51): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(910,51): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(924,146): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(925,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(925,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(932,150): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(933,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(933,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(940,162): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(940,162): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(940,190): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(940,190): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(945,116): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1011,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1011,61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1011,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1012,50): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1163,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1164,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1403,40): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1403,40): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1423,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1512,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1513,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1590,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1591,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1616,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1710,67): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1710,67): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1732,109): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1732,76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1822,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1822,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1842,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1847,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1866,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1899,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1900,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1910,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1911,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1945,88): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1960,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1961,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1971,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(1972,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2033,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2033,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2059,34): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2066,34): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2096,177): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2101,180): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2191,36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2195,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2302,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2383,179): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2383,179): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2383,226): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2383,226): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2441,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2442,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2513,175): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2513,106): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2513,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2514,198): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2514,129): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2514,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2515,202): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2515,133): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2515,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2516,202): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2516,133): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2516,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2517,202): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2517,133): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2517,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2518,202): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2518,133): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2518,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2520,73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2520,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2520,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2520,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2573,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2628,28): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2633,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2702,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(2703,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3124,81): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3124,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3189,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3189,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3321,89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3321,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3332,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3332,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3332,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3332,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3338,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3338,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3338,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3339,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3339,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3339,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3340,101): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3340,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3340,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3341,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3341,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3341,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3356,107): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\Raygui\src\raygui.h(3356,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Player.cpp
-C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Player.cpp(45,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SeekBehaviour.cpp
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(113,24): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(113,50): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(113,83): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(114,24): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(114,31): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(143,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(208,46): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(208,59): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(209,47): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(209,60): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(350,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(351,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(431,79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\RaylibStarterCPP1\src\Application.cpp(431,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating code
-  885 of 1335 functions (66.3%) were compiled, the rest were copied from previous compilation.
-    539 functions were new in current compilation
-    84 functions had inline decision re-evaluated but remain unchanged
+  2 of 1531 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    9 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 raylib.lib(core.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(core.obj)' or at 'C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\bin\Win32\Release\raylib.pdb'; linking object as if no debug info
+raylib.lib(models.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(models.obj)' or at 'C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\bin\Win32\Release\raylib.pdb'; linking object as if no debug info
 raylib.lib(textures.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(textures.obj)' or at 'C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\bin\Win32\Release\raylib.pdb'; linking object as if no debug info
-raylib.lib(shapes.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(shapes.obj)' or at 'C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\bin\Win32\Release\raylib.pdb'; linking object as if no debug info
 raylib.lib(text.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(text.obj)' or at 'C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\bin\Win32\Release\raylib.pdb'; linking object as if no debug info
+raylib.lib(shapes.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(shapes.obj)' or at 'C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\bin\Win32\Release\raylib.pdb'; linking object as if no debug info
 raylib.lib(utils.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(utils.obj)' or at 'C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\bin\Win32\Release\raylib.pdb'; linking object as if no debug info
 raylib.lib(rglfw.obj) : warning LNK4099: PDB 'raylib.pdb' was not found with 'raylib.lib(rglfw.obj)' or at 'C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\bin\Win32\Release\raylib.pdb'; linking object as if no debug info
   RaylibStarterCPP1.vcxproj -> C:\Users\s200503\Desktop\Artificial Intellegence for Games Assessment\AI Assessment\bin\Win32\Release\AIE_GAMEAI.exe

@@ -28,6 +28,7 @@ public:
 	void Draw();
 
 	void Map();
+	void EndGame();
 
 	bool CanEdgeNearObject(Graph2D::Node* node, Graph2D::Node* toNode);
 
@@ -46,13 +47,20 @@ private:
 	Texture2D obstacle;
 	Texture2D hole;
 	Texture2D human;
+	Texture2D boo;
+	Texture2D hunter;
 
 	Player* player = new Player();
+	NPC* hunterNPC;
 
 	std::list<GameObject*> objects;
+	std::list<GameObject*> holes;
 	std::list<NPC*> npcs;
 
 	std::map<int, std::map<int, GameObject*>> objectPositions;
 
 	Camera2D camera;
+
+	int killed = 0;
+	bool gameOver = false;
 };

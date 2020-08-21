@@ -30,7 +30,6 @@ bool Graph2D::Process(PFNode* node, Node* find)
 {
 	if (node->node == find)
 	{
-		std::cout << "FOUND NODE " << node->node->data.x << " " << node->node->data.y << std::endl;
 		return true;
 	}
 

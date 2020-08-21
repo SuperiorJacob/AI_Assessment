@@ -12,6 +12,7 @@ public:
 	void Update(GameObject* obj, float deltaTime);
 
 	float seekSpeed = 1.0f;
+	float m_targetRadius = 100;
 
 private:
 };

@@ -13,6 +13,7 @@
 #include "NPC.h"
 
 #include <iostream>
+#include <string>
 
 Application::Application(int windowWidth, int windowHeight, const char* windowTitle) :
 	m_windowWidth(windowWidth),
@@ -61,6 +62,8 @@ Texture2D GetTextureFromImage(Image img)
 
 void Application::Map()
 {
+	killed = 0;
+
 	// THIS IS TO BE CHANGED LATER
 	for (int side = 1; side < 3; side++)
 	{
@@ -82,6 +85,7 @@ void Application::Map()
 		delete npc;
 	}
 	npcs.clear();
+	holes.clear();
 
 	objectPositions.clear();
 
@@ -95,7 +99,12 @@ void Application::Map()
 
 			Vector2 pos = {(column * 32) + 32 / 2, (row * 32) + 32 / 2 };
 
-			if (x == 1) objects.push_back(new GameObject({ pos, hole }));
+			if (x == 1)
+			{
+				GameObject* newObj = new GameObject({ pos, hole });
+				objects.push_back(newObj);
+				holes.push_back(newObj);
+			}
 			else if (x >= 85)
 			{
 				GameObject* newObj = new GameObject({ pos, obstacle });
@@ -118,7 +127,13 @@ void Application::Map()
 	// PLAYER
 	player->SetPosition(playerPos);
 	player->SetTexture(ghost, 32, 32);
+	player->boo = boo;
 
+	hunterNPC->SetPosition(playerPos);
+	hunterNPC->SetBehaviour(hunterNPC->GetWanderBehaviour());
+	hunterNPC->GetWanderBehaviour()->SetTarget(playerPos);
+
+	npcs.push_back(hunterNPC); // Hunter
 	objects.push_back(player); // Player
 	//
 
@@ -152,6 +167,23 @@ void Application::Map()
 	// Path Finding Test
 	//m_graphEditor->SetPath(m_graphEditor->GetGraph()->PathFind(player->standingNode, m_graphEditor->GetGraph()->GetNodes().back()));
 	//
+}
+
+void Application::EndGame()
+{
+	gameOver = true;
+
+	//for (GameObject* obj : objects)
+	//{
+	//	obj = nullptr;
+	//	delete obj;
+	//}
+
+	//objects.clear();
+
+	//m_graphEditor->DeleteGraph();
+
+	//Map();
 }
 
 bool operator ==(const Vector2& l, const Vector2& r)
@@ -212,7 +244,11 @@ void Application::Load()
 	ghost = GetTextureFromImage(LoadImage("ghost.png")); // 1
 	hole = GetTextureFromImage(LoadImage("hole.png")); // 2
 	obstacle = GetTextureFromImage(LoadImage("obstacle.png")); // 3
-	human = GetTextureFromImage(LoadImage("human.png"));
+	human = GetTextureFromImage(LoadImage("human.png")); // 4
+	boo = GetTextureFromImage(LoadImage("boo.png")); // 5
+	hunter = GetTextureFromImage(LoadImage("hunter.png")); // 6
+
+	hunterNPC = new NPC({ Vector2({0,0}), hunter });
 
 	Map();
 }
@@ -225,21 +261,104 @@ void Application::Unload()
 
 void Application::Update(float deltaTime)
 {
+	if (gameOver) return;
+
 	m_graphEditor->Update(deltaTime);
 
 	Vector2 plyPos = player->GetPosition();
 	camera.target = plyPos;
 
+	if (IsKeyPressed(KEY_SPACE) && player->booWait <= 0)
+	{
+		hunterNPC->Seek(plyPos);
+
+		for (auto npc : npcs)
+		{
+			if (!npc->falling && npc != hunterNPC)
+			{
+				if (Vector2Distance(npc->GetPosition(), plyPos) < 80)
+				{
+					FleeBehaviour* fleeBehave = npc->GetFleeBehaviour();
+
+					fleeBehave->Flee(npc->GetPosition(), plyPos);
+
+					npc->SetBehaviour(fleeBehave);
+					npc->isFleeing = true;
+				}
+			}
+		}
+	}
+
+	if (hunterNPC->seeking)
+	{
+		if (Vector2Distance(hunterNPC->GetPosition(), plyPos) < 30)
+		{
+			EndGame();
+		}
+		else if (Vector2Distance(hunterNPC->GetPosition(), plyPos) < 200 && player->booWait > 0)
+		{
+			hunterNPC->Seek(plyPos);
+		}
+	}
+
+
 	for (auto npc : npcs)
 	{
-		if (Vector2Distance(npc->GetPosition(), plyPos) < 100)
+		if (npc->dead && !npc->seeking)
 		{
-			FleeBehaviour* fleeBehave = npc->GetFleeBehaviour();
-			
-			fleeBehave->Flee(npc->GetPosition(), plyPos);
+			Vector2 randPos = Vector2({ (float)(rand() % 32 + (m_windowWidth - 64)), (float)(rand() % 32 + (m_windowHeight - 64)) });
 
-			npc->SetBehaviour(fleeBehave);
+			npc->SetPosition(randPos);
+			npc->SetBehaviour(npc->GetWanderBehaviour());
+			npc->GetWanderBehaviour()->SetTarget(npc->GetPosition());
+
+			npc->dead = false;
+			npc->falling = false;
+			npc->isFleeing = false;
+
+			continue;
 		}
+
+		if (!npc->falling && !npc->seeking)
+		{
+			for (auto hole : holes)
+			{
+				Vector2 holePos = hole->GetPosition();
+				holePos.x -= 16;
+				holePos.y -= 16;
+
+				if (Vector2Distance(npc->GetPosition(), holePos) < 20)
+				{
+					npc->Fall();
+					npc->SetPosition(holePos);
+					npc->SetBehaviour(nullptr);
+
+					killed++;
+				}
+			}
+
+			if (!npc->falling && !npc->isFleeing && player->booWait <= 0 && !npc->seeking)
+			{
+				npc->SetBehaviour(npc->GetWanderBehaviour());
+			}
+		}
+
+		Vector2 npcPos = npc->GetPosition();
+
+		if ((npcPos.x < 0 || npcPos.x > m_windowWidth) || (npcPos.y < 0 || npcPos.y > m_windowHeight))
+		{
+			npcPos.x = m_windowWidth / 2;
+			npcPos.y = m_windowHeight / 2;
+
+			npc->SetBehaviour(npc->GetWanderBehaviour());
+			npc->GetWanderBehaviour()->SetTarget(npcPos);
+			npc->SetVelocity(Vector2({ 0,0 }));
+		}
+
+		npcPos.x = ((npcPos.x < 32) ? 32 : ((npcPos.x > m_windowWidth - 32) ? m_windowWidth - 32 : npcPos.x));
+		npcPos.y = ((npcPos.y < 32) ? 32 : ((npcPos.y > m_windowHeight - 32) ? m_windowHeight - 32 : npcPos.y));
+
+		npc->SetPosition(npcPos);
 	}
 
 	if (IsMouseButtonPressed(1))
@@ -282,24 +401,36 @@ void Application::Update(float deltaTime)
 void Application::Draw()
 {
 	BeginDrawing();
-	BeginMode2D(camera);
-	//ClearBackground(BLACK);
+		BeginMode2D(camera);
+		//ClearBackground(BLACK);
 
-	ClearBackground(Color({ 142, 142, 142 }));
+			ClearBackground(Color({ 142, 142, 142 }));
 
-	if (IsKeyDown(KEY_TAB))
-		m_graphEditor->Draw();
+			if (IsKeyDown(KEY_TAB))
+				m_graphEditor->Draw();
 
-	for (auto obj : objects)
+			for (auto obj : objects)
+			{
+				obj->Draw();
+			}
+
+			for (auto npc : npcs)
+			{
+				npc->Draw();
+			}
+
+			DrawText("Ghosts Revenge", 10, -50, 50, DARKPURPLE);
+
+		EndMode2D();
+
+	std::string display = "Kills: " + std::to_string(killed);
+	DrawText(display.c_str(), 10, 10, 50, BLACK);
+
+	if (gameOver)
 	{
-		obj->Draw();
+		DrawCube({ (float)m_windowHeight, (float)m_windowHeight/2 }, m_windowWidth, m_windowHeight, 1, GRAY);
+		DrawText("GAME OVER", 200, m_windowHeight / 2 - 200 / 2, 200, RED);
 	}
 
-	for (auto npc : npcs)
-	{
-		npc->Draw();
-	}
-
-	EndMode2D();
 	EndDrawing();
 }

@@ -34,7 +34,42 @@ void Player::Update(float deltaTime)
 
 void Player::Draw()
 {
-	GameObject::Draw();
+	if (m_behaviour != nullptr) m_behaviour->Draw(this);
+
+	Vector2 pos = GetPosition();
+	Color plyCol = WHITE;
+	plyCol.a = (booWait <= 0) ? 100 : (100 - booWait) * 255;
+
+	DrawTexture(GetTexture(), pos.x - width / 2, pos.y - height / 2, debug ? RED : plyCol);
+	//GameObject::Draw();
+
+	if (IsKeyPressed(KEY_SPACE) && booWait <= 0)
+	{
+		booWait = 100;
+		booPos = GetPosition();
+	}
+	else if (booWait > 0)
+	{
+		Vector2 pos = booPos;
+		float size = 4 * (float)booWait/100;
+		pos.x -= 16 * size;
+		pos.y -= 16 * size;
+
+		//float size2 = 100 - booWait * 2;
+
+		//Color red = RED;
+		//red.a = (100 - booWait / 100) * 255;
+
+		//DrawCircle(booPos.x, booPos.y, size2, red);
+
+		DrawTextureEx(boo, pos, (100 - booWait) % 360, size, WHITE);
+
+		//DrawTextureEx(GetTexture(), pos.x - size / 2, pos.y - size / 2, debug ? RED : WHITE);
+		//DrawText("BOO", pos.x - size, pos.y - size, size, RED);
+		//DrawText("BOO", pos.x - size, pos.y - size, size, WHITE);
+
+		booWait--;
+	}
 }
 
 Graph2D::Node* Player::NodeBelow(Graph2DEditor* graph)

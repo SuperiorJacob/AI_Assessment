@@ -144,7 +144,7 @@ void Graph2DEditor::PathFromNode(Graph2D::Node* node, Camera2D camera)
 			click = nearbyNode;
 	}
 
-	if (tooClose)
+	if (tooClose && click != nullptr)
 	{
 		for (auto node : GetGraph()->GetNodes())
 		{
