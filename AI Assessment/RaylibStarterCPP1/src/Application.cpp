@@ -80,10 +80,6 @@ void Application::Map()
 		}
 	}
 
-	for (auto npc : npcs)
-	{
-		delete npc;
-	}
 	npcs.clear();
 	holes.clear();
 
@@ -129,7 +125,9 @@ void Application::Map()
 	player->SetTexture(ghost, 32, 32);
 	player->boo = boo;
 
-	hunterNPC->SetPosition(playerPos);
+	Vector2 hunterPos = { (float)m_windowWidth / 2, (float)m_windowHeight / 2 };
+
+	hunterNPC->SetPosition(hunterPos);
 	hunterNPC->SetBehaviour(hunterNPC->GetWanderBehaviour());
 	hunterNPC->GetWanderBehaviour()->SetTarget(playerPos);
 
@@ -248,7 +246,7 @@ void Application::Load()
 	boo = GetTextureFromImage(LoadImage("boo.png")); // 5
 	hunter = GetTextureFromImage(LoadImage("hunter.png")); // 6
 
-	hunterNPC = new NPC({ Vector2({0,0}), hunter });
+	hunterNPC = new NPC({ Vector2({ (float)m_windowWidth / 2, (float)m_windowHeight / 2 }), hunter });
 
 	Map();
 }
@@ -261,8 +259,16 @@ void Application::Unload()
 
 void Application::Update(float deltaTime)
 {
-	if (gameOver) return;
-
+	if (gameOver)
+	{
+		if (IsMouseButtonPressed(1))
+		{
+			gameOver = false;
+			player->booWait = 0;
+		}
+		else return;
+	}
+		
 	m_graphEditor->Update(deltaTime);
 
 	Vector2 plyPos = player->GetPosition();
@@ -289,13 +295,13 @@ void Application::Update(float deltaTime)
 		}
 	}
 
-	if (hunterNPC->seeking)
+	if (hunterNPC->seeking && player->booWait > 0)
 	{
 		if (Vector2Distance(hunterNPC->GetPosition(), plyPos) < 30)
 		{
 			EndGame();
 		}
-		else if (Vector2Distance(hunterNPC->GetPosition(), plyPos) < 200 && player->booWait > 0)
+		else if (Vector2Distance(hunterNPC->GetPosition(), plyPos) < 200)
 		{
 			hunterNPC->Seek(plyPos);
 		}
@@ -430,6 +436,7 @@ void Application::Draw()
 	{
 		DrawCube({ (float)m_windowHeight, (float)m_windowHeight/2 }, m_windowWidth, m_windowHeight, 1, GRAY);
 		DrawText("GAME OVER", 200, m_windowHeight / 2 - 200 / 2, 200, RED);
+		DrawText("RIGHT CLICK TO RESTART", 200, m_windowHeight / 2 + 200 / 2, 60, WHITE);
 	}
 
 	EndDrawing();
